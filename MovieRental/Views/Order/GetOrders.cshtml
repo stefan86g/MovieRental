@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MovieRental.Models.OrderViewModel>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <link href="~/Style/StyleIndex.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div id="movies">
+        <div id="flex_element">
+         
+            <div id="manager_content" class="table table-responsive">
+                <table id="moviesTable">
+                    <thead class="thead-inverse">
+                        <tr>
+                            <th>
+                                User Name
+                            </th>
+                            <th>
+                               Title
+                            </th>
+                            <th>
+                                Order Date
+                            </th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="table-adres-row">
+
+                                <td>@item.Email</td>
+                                <td>@item.Title</td>
+                                <td>@item.OrderDate</td>
+                              
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

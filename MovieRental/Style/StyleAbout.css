@@ -1,0 +1,41 @@
+﻿
+/*******About*******/
+
+.CaptionAbout {
+    text-align: center;
+    font: normal 40px/1 "Audiowide", Helvetica, sans-serif;
+}
+
+
+
+#about {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 22%,rgba(245,247,249,1) 68%,rgba(215,222,227,1) 100%,rgba(215,222,227,1) 100%);
+}
+
+.aboutPicRight {
+    float: right;
+    text-align: right;
+    margin: 10px 30px 10px 10px;
+}
+
+.aboutPicLeft {
+    float: left;
+    text-align: left;
+    margin: 10px 30px 10px 10px;
+}
+
+
+#aboutText {
+    padding-left: 15%;
+    padding-right: 15%;
+    text-align: left;
+}
+
+.aboutPicLeft, .aboutPicRight {
+    width: 20%;
+    height: auto;
+    border-radius: 40px 40px 40px 40px;
+}
