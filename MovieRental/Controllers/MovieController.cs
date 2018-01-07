@@ -54,7 +54,11 @@ namespace MovieRental.Controllers
         }
 
 
-        //Update Movie
+        /// <summary>
+        /// This action return view of movie model for editing
+        /// </summary>
+        /// <param name="title">Title of the movie</param>
+        /// <returns>View of the movie model</returns>
         [HttpGet]
         public ActionResult EditMovie(string title)
         {
@@ -63,8 +67,13 @@ namespace MovieRental.Controllers
             return View(movieVM);
         }
 
+        /// <summary>
+        /// This action update movie and redirect to list of movies action
+        /// </summary>
+        /// <param name="vm"></param>
+        /// <returns></returns>
         [HttpPost]
-        public ActionResult EditMovie(string title, MovieViewModel vm)
+        public ActionResult EditMovie(MovieViewModel vm)
         {
 
             DBMovieRent.Movie movie = MovieMapper.MapViewModelToModel(vm);
