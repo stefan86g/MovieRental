@@ -38,6 +38,20 @@ namespace DBMovieRent
             return movies.ToList();
         }
 
+        //Get all Availabile Movies
+        public IEnumerable<Movie> GetAllAvailableMovies()
+        {
+            string Available = "available";
+            return movies.Where(c => c.Availability == Available).ToList();
+        }
+
+        //Get all NOT Availabile Movies
+        public IEnumerable<Movie> GetAllNotAvailableMovies()
+        {
+            string Available = "not available";
+            return movies.Where(c => c.Availability == Available).ToList();
+        }
+
         //Add movie to database
         public void Insert(Movie movie)
         {
@@ -56,6 +70,7 @@ namespace DBMovieRent
                 movie.ReleaseDate = movieForUpdate.ReleaseDate;
                 movie.Genre = movieForUpdate.Genre;
                 movie.Price = movieForUpdate.Price;
+                movie.Availability = movieForUpdate.Availability;
                 context.SaveChanges();
             }
         }
@@ -68,7 +83,7 @@ namespace DBMovieRent
             context.SaveChanges();
         }
 
-       
+        
 
         public void Dispose()
         {

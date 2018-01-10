@@ -21,13 +21,24 @@ namespace BOLMovieRent.Movies
             return orders;
         }
 
-        //add Order
+        // add Order
         public void AddOrderService(DBMovieRent.Order orderVM)
         {
 
             using (OrderRepository orderRepository = new OrderRepository())
             {
                 orderRepository.AddtOrdertoDB(orderVM);
+            }
+        }
+
+        // change orders availability
+        public void ChangeAvailAbility(string tilte)
+        {
+
+            using (OrderRepository orderRepository = new OrderRepository())
+            {
+
+                orderRepository.SetAvailAbility(tilte);
             }
         }
 

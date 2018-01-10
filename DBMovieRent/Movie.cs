@@ -20,5 +20,6 @@ namespace DBMovieRent
         public string Genre { get; set; }
         public Nullable<int> Price { get; set; }
         public string Picture { get; set; }
+        public string Availability { get; set; }
     }
 }

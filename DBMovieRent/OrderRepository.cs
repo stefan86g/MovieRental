@@ -25,12 +25,28 @@ namespace DBMovieRent
             return orders.ToList();
         }
 
+
+
         //Add order to database
         public void AddtOrdertoDB(Order order)
         {
 
             orders.Add(order);
             context.SaveChanges();
+        }
+
+        // set a movie availability
+        public void SetAvailAbility(string tilte)
+        {
+            Movie movie = context.Movies1.FirstOrDefault(c => c.Title == tilte);
+            if (movie != null)
+            {
+
+                movie.Availability = "Not Available";
+
+                context.SaveChanges();
+            }
+
         }
 
 

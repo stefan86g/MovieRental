@@ -20,5 +20,7 @@ namespace MovieRental.Models
         [Range(1,120)]
         [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Count must be a natural number")]
         public string Price { get; set; }
+        [Required]
+        public string Availability { get; set; }
     }
 }

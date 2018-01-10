@@ -21,6 +21,30 @@ namespace BOLMovieRent.Movies
             return movies;
         }
 
+        //get available Movies
+        public IEnumerable<DBMovieRent.Movie> GetAvailableMovies()
+        {
+            IEnumerable<DBMovieRent.Movie> movies;
+            using (MovieRepository moviesRepository = new MovieRepository())
+            {
+                movies = moviesRepository.GetAllAvailableMovies();
+            }
+            return movies;
+        }
+
+        //get NOT available Movies
+        public IEnumerable<DBMovieRent.Movie> GetNotAvailableMovies()
+        {
+            IEnumerable<DBMovieRent.Movie> movies;
+            using (MovieRepository moviesRepository = new MovieRepository())
+            {
+                movies = moviesRepository.GetAllNotAvailableMovies();
+            }
+            return movies;
+        }
+
+
+
         //get  by id
         public Movie GetById(int id)
         {

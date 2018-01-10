@@ -22,11 +22,11 @@ namespace MovieRental.Controllers
             movieService = new MovieService();
         }
 
-        // Get all movies list
+        // Get all Available movies list
         [HttpGet]
         public ActionResult GetMovies()
         {
-            IEnumerable<Movie> movies = movieService.GetAllMovies();
+            IEnumerable<Movie> movies = movieService.GetAvailableMovies();
             List<MovieViewModel> moviesVMs = new List<MovieViewModel>();
             foreach (Movie movie in movies)
             {
@@ -36,6 +36,22 @@ namespace MovieRental.Controllers
                
             return View(moviesVMs);
         }
+
+        // Get all NOT Available movies list
+        [HttpGet]
+        public ActionResult NotAvailableMovies()
+        {
+            IEnumerable<Movie> movies = movieService.GetNotAvailableMovies();
+            List<MovieViewModel> moviesVMs = new List<MovieViewModel>();
+            foreach (Movie movie in movies)
+            {
+                MovieViewModel movieVM = MovieMapper.MapModelToViewModel(movie);
+                moviesVMs.Add(movieVM);
+            }
+
+            return View(moviesVMs);
+        }
+
 
         //Add new Movie
         [HttpPost]
@@ -54,7 +70,7 @@ namespace MovieRental.Controllers
         }
 
 
-    
+        //Edit Movies
         [HttpGet]
         public ActionResult EditMovie(string title)
         {

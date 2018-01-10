@@ -15,6 +15,7 @@
           <Property Name="ReleaseDate" Type="datetime" />
           <Property Name="Genre" Type="nvarchar" MaxLength="50" />
           <Property Name="Price" Type="int" />
+          <Property Name="Availability" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
@@ -53,6 +54,7 @@
           <Property Name="Genre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Int32" />
           <Property Name="Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Availability" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="DataMovieRentEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Movies1" EntityType="DataMovieRentModel.Movie" />
@@ -86,6 +88,7 @@
           <EntitySetMapping Name="Movies1">
             <EntityTypeMapping TypeName="DataMovieRentModel.Movie">
               <MappingFragment StoreEntitySet="Movies">
+                <ScalarProperty Name="Availability" ColumnName="Availability" />
                 <ScalarProperty Name="Picture" ColumnName="Picture" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />

@@ -20,6 +20,7 @@ namespace MovieRental.Mappers
             movieVM.ReleaseDate = Convert.ToDateTime(movie.ReleaseDate);
             movieVM.Genre = movie.Genre;
             movieVM.Price = movie.Price.ToString();
+            movieVM.Availability = movie.Availability;
 
             return movieVM;
         }
@@ -34,7 +35,7 @@ namespace MovieRental.Mappers
             movie.ReleaseDate = movieVM.ReleaseDate;
             movie.Genre = movieVM.Genre;
             movie.Price = string.IsNullOrEmpty(movieVM.Price) ? 0 : Int32.Parse(movieVM.Price);
-
+            movie.Availability = movieVM.Availability;
             return movie;
         }
     }

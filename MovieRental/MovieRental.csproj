@@ -342,6 +342,7 @@
     <Content Include="Views\User\RegisterUser.cshtml" />
     <Content Include="Views\Order\AddOrder.cshtml" />
     <Content Include="Views\Order\GetOrders.cshtml" />
+    <Content Include="Views\Movie\NotAvailableMovies.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -47,6 +47,8 @@ namespace MovieRental.Controllers
             DBMovieRent.Order order = OrderMapper.OrderMapViewModelToModel(OrderModel);
             this.orderService.AddOrderService(order);
 
+            this.orderService.ChangeAvailAbility(title);
+
             return RedirectToRoute(new { controller = "Movie", action = "GetMovies" });
         }
     }
